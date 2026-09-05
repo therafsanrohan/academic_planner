@@ -55,11 +55,11 @@ export default function PrerequisiteMapPage() {
             <button
               key={f}
               onClick={() => setFilter(f)}
-              className={\`px-4 py-2 rounded-lg text-sm font-bold transition-all \${
+              className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${
                 filter === f 
                   ? 'bg-white text-indigo-700 shadow-sm border border-slate-200/50' 
                   : 'text-slate-500 hover:text-slate-800 hover:bg-white/40'
-              }\`}
+              }`}
             >
               {f}
             </button>
@@ -91,11 +91,11 @@ export default function PrerequisiteMapPage() {
                     </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <span className={\`inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-bold \${
+                    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-bold ${
                       item.status === 'Completed' ? 'bg-green-100 text-green-800' :
                       item.status === 'In Progress' ? 'bg-blue-100 text-blue-800' :
                       'bg-slate-100 text-slate-700'
-                    }\`}>
+                    }`}>
                       {item.status}
                     </span>
                   </td>

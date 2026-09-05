@@ -79,7 +79,7 @@ export default function OfficialPlanPage() {
               <div className="w-full bg-slate-100 rounded-full h-2 mb-6 overflow-hidden">
                 <div 
                   className="bg-blue-600 h-2 rounded-full transition-all duration-1000 ease-out"
-                  style={{ width: \`\${completionPercentage}%\` }}
+                  style={{ width: `${completionPercentage}%` }}
                 />
               </div>
 

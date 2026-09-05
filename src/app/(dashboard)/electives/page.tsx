@@ -77,12 +77,12 @@ export default function ElectivesPage() {
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="text-right">
-                    <p className={\`text-sm font-bold \${isSatisfied ? 'text-green-600' : 'text-blue-600'}\`}>
+                    <p className={`text-sm font-bold ${isSatisfied ? 'text-green-600' : 'text-blue-600'}`}>
                       {group.selected_credits} / {group.required_credits} Credits
                     </p>
                     <p className="text-xs text-slate-500 font-medium uppercase tracking-wider">Selected</p>
                   </div>
-                  <div className={\`h-10 w-10 rounded-full flex items-center justify-center font-bold text-sm shadow-sm \${isSatisfied ? 'bg-green-100 text-green-700 border border-green-200' : 'bg-blue-50 text-blue-700 border border-blue-100'}\`}>
+                  <div className={`h-10 w-10 rounded-full flex items-center justify-center font-bold text-sm shadow-sm ${isSatisfied ? 'bg-green-100 text-green-700 border border-green-200' : 'bg-blue-50 text-blue-700 border border-blue-100'}`}>
                     {Math.round(progressPercent)}%
                   </div>
                 </div>
@@ -93,11 +93,11 @@ export default function ElectivesPage() {
                   <div 
                     key={c.code}
                     onClick={() => toggleSelection(group.id, c.code)}
-                    className={\`group relative p-4 rounded-xl border-2 transition-all cursor-pointer \${
+                    className={`group relative p-4 rounded-xl border-2 transition-all cursor-pointer ${
                       c.selected 
                         ? 'border-blue-500 bg-blue-50/50 shadow-md shadow-blue-500/10' 
                         : 'border-slate-200 bg-white/50 hover:border-blue-300 hover:bg-slate-50'
-                    }\`}
+                    }`}
                   >
                     <div className="absolute top-4 right-4">
                       {c.selected ? (
@@ -111,13 +111,13 @@ export default function ElectivesPage() {
                       )}
                     </div>
                     <div>
-                      <h3 className={\`font-bold \${c.selected ? 'text-blue-900' : 'text-slate-700'}\`}>{c.code}</h3>
-                      <p className={\`text-sm mt-1 mb-3 line-clamp-2 \${c.selected ? 'text-blue-700/80' : 'text-slate-500'}\`}>
+                      <h3 className={`font-bold ${c.selected ? 'text-blue-900' : 'text-slate-700'}`}>{c.code}</h3>
+                      <p className={`text-sm mt-1 mb-3 line-clamp-2 ${c.selected ? 'text-blue-700/80' : 'text-slate-500'}`}>
                         {c.title}
                       </p>
-                      <span className={\`inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-semibold \${
+                      <span className={`inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-semibold ${
                         c.selected ? 'bg-blue-200/50 text-blue-800' : 'bg-slate-100 text-slate-600'
-                      }\`}>
+                      }`}>
                         {c.credits} Credits
                       </span>
                     </div>

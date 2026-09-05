@@ -35,14 +35,14 @@ export default function ImportPlanPage() {
           <div className="flex border-b border-slate-200/60">
             <button
               onClick={() => setImportMode('pdf')}
-              className={\`flex-1 py-4 text-sm font-bold flex items-center justify-center gap-2 transition-colors \${importMode === 'pdf' ? 'bg-indigo-50/50 text-indigo-700 border-b-2 border-indigo-600' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50'}\`}
+              className={`flex-1 py-4 text-sm font-bold flex items-center justify-center gap-2 transition-colors ${importMode === 'pdf' ? 'bg-indigo-50/50 text-indigo-700 border-b-2 border-indigo-600' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50'}`}
             >
               <FileText size={18} />
               PDF Upload
             </button>
             <button
               onClick={() => setImportMode('url')}
-              className={\`flex-1 py-4 text-sm font-bold flex items-center justify-center gap-2 transition-colors \${importMode === 'url' ? 'bg-indigo-50/50 text-indigo-700 border-b-2 border-indigo-600' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50'}\`}
+              className={`flex-1 py-4 text-sm font-bold flex items-center justify-center gap-2 transition-colors ${importMode === 'url' ? 'bg-indigo-50/50 text-indigo-700 border-b-2 border-indigo-600' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50'}`}
             >
               <LinkIcon size={18} />
               Official URL

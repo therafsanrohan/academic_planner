@@ -34,11 +34,11 @@ export default function AdminDashboardPage() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={\`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold transition-all \${
+              className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold transition-all ${
                 activeTab === tab.id 
                   ? 'bg-rose-50 text-rose-700 shadow-sm border border-rose-100' 
                   : 'text-slate-600 hover:bg-slate-50 border border-transparent'
-              }\`}
+              }`}
             >
               <tab.icon size={18} className={activeTab === tab.id ? 'text-rose-600' : 'text-slate-400'} />
               {tab.name}
@@ -118,7 +118,7 @@ export default function AdminDashboardPage() {
         </div>
       </div>
       
-      <style dangerouslySetInnerHTML={{__html: \`
+      <style dangerouslySetInnerHTML={{__html: `
         @keyframes fadeInUp {
           from { opacity: 0; transform: translateY(10px); }
           to { opacity: 1; transform: translateY(0); }
@@ -126,7 +126,7 @@ export default function AdminDashboardPage() {
         .animate-fade-in-up {
           animation: fadeInUp 0.3s ease-out forwards;
         }
-      \`}} />
+      `}} />
     </div>
   );
 }

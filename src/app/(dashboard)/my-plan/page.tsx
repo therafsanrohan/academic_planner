@@ -161,7 +161,7 @@ export default function MyPlanPage() {
                     {row.prereq_2}
                   </td>
                   <td className="px-4 py-3 whitespace-nowrap">
-                    <div className={\`p-1.5 rounded-md inline-block \${row.eligibility.includes('Pending') ? 'bg-red-50' : row.eligibility.includes('Available') ? 'bg-green-50' : 'bg-slate-50'}\`}>
+                    <div className={`p-1.5 rounded-md inline-block ${row.eligibility.includes('Pending') ? 'bg-red-50' : row.eligibility.includes('Available') ? 'bg-green-50' : 'bg-slate-50'}`}>
                        {renderEligibility(row.eligibility)}
                     </div>
                   </td>
