@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { BookOpen } from 'lucide-react';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { createClient } from '@/lib/supabase/client';
 
 export default function SignUpPage() {
   const router = useRouter();
@@ -19,17 +20,22 @@ export default function SignUpPage() {
     setError('');
 
     try {
-      const res = await fetch('/api/auth/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, password }),
+      const supabase = createClient();
+      
+      const { data, error: authError } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          data: {
+            full_name: name,
+          }
+        }
       });
 
-      if (res.ok) {
-        router.push('/login');
+      if (authError) {
+        setError(authError.message);
       } else {
-        const data = await res.json();
-        setError(data.message || 'Registration failed');
+        router.push('/login?message=Check your email to verify your account');
       }
     } catch (err) {
       setError('An error occurred during registration.');

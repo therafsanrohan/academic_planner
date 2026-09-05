@@ -3,8 +3,8 @@
 import Link from 'next/link';
 import { BookOpen } from 'lucide-react';
 import { useState } from 'react';
-import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
+import { createClient } from '@/lib/supabase/client';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -19,14 +19,14 @@ export default function LoginPage() {
     setError('');
 
     try {
-      const res = await signIn('credentials', {
-        redirect: false,
+      const supabase = createClient();
+      const { error: authError } = await supabase.auth.signInWithPassword({
         email,
         password,
       });
 
-      if (res?.error) {
-        setError(res.error);
+      if (authError) {
+        setError(authError.message);
       } else {
         router.push('/dashboard');
       }
