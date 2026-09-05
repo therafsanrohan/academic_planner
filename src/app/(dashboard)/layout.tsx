@@ -1,15 +1,17 @@
 'use client';
 
 import Link from 'next/link';
-import { BookOpen, Home, List, CalendarDays, AlertTriangle, Settings, FileText, Sparkles } from 'lucide-react';
+import { Home, List, BookOpen, Layers, Archive, Map, Upload, Settings, Sparkles } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 
 const navigation = [
   { name: 'Dashboard', href: '/dashboard', icon: Home },
-  { name: 'My Course Plan', href: '/courses', icon: List },
-  { name: 'Next Trimester', href: '/planner', icon: CalendarDays },
-  { name: 'Retakes', href: '/retakes', icon: AlertTriangle },
-  { name: 'Documents', href: '/documents', icon: FileText },
+  { name: 'My Course Plan', href: '/my-plan', icon: List },
+  { name: 'Official Plan', href: '/official-plan', icon: BookOpen },
+  { name: 'Electives', href: '/electives', icon: Layers },
+  { name: 'Unmapped Data', href: '/unmapped', icon: Archive },
+  { name: 'Prerequisite Map', href: '/prerequisites', icon: Map },
+  { name: 'Import Plan', href: '/import', icon: Upload },
   { name: 'Settings', href: '/settings', icon: Settings },
 ];
 

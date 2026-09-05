@@ -188,15 +188,24 @@ export default function PlannerPage() {
             )}
           </div>
 
-          <button 
-            disabled={selectedCourses.length === 0}
-            className="w-full bg-gradient-to-r from-indigo-500 to-blue-600 hover:from-indigo-600 hover:to-blue-700 text-white rounded-2xl py-4 font-bold text-base transition-all disabled:opacity-50 disabled:grayscale flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(79,70,229,0.3)] hover:shadow-[0_0_25px_rgba(79,70,229,0.5)] hover:-translate-y-0.5 active:translate-y-0 relative z-10"
-          >
-            <Save size={20} strokeWidth={2.5} />
-            Save Draft Plan
-          </button>
+          <div className="flex gap-4 relative z-10">
+            <button 
+              disabled={selectedCourses.length === 0}
+              className="flex-1 bg-gradient-to-r from-indigo-500 to-blue-600 hover:from-indigo-600 hover:to-blue-700 text-white rounded-2xl py-4 font-bold text-base transition-all disabled:opacity-50 disabled:grayscale flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(79,70,229,0.3)] hover:shadow-[0_0_25px_rgba(79,70,229,0.5)] hover:-translate-y-0.5 active:translate-y-0"
+            >
+              <Save size={20} strokeWidth={2.5} />
+              Save Draft
+            </button>
+            <button 
+              onClick={() => window.print()}
+              disabled={selectedCourses.length === 0}
+              className="flex-1 bg-white/10 hover:bg-white/20 text-white rounded-2xl py-4 font-bold text-base transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 border border-white/20"
+            >
+              Export PDF
+            </button>
+          </div>
           
-          <p className="text-[11px] font-medium text-slate-500 text-center mt-5 px-4 relative z-10">
+          <p className="text-[11px] font-medium text-slate-500 text-center mt-5 px-4 relative z-10 print:hidden">
             Saving this plan does not officially register you for courses. You must still register via the university portal.
           </p>
         </div>

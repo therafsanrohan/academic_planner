@@ -139,7 +139,7 @@ export default function DashboardPage() {
             <h2 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
               <Target className="h-5 w-5 text-indigo-500" /> Graduation Target
             </h2>
-            <div className="bg-white/60 backdrop-blur-xl rounded-3xl border border-white p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+            <div className="bg-white/60 backdrop-blur-xl rounded-3xl border border-white p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] mb-8">
               <p className="text-sm font-medium text-slate-500 mb-3">Estimated completion (12 credits/trim):</p>
               <div className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-700 inline-block">
                 Fall 2027
@@ -150,6 +150,34 @@ export default function DashboardPage() {
               <div className="flex justify-between mt-3 text-xs font-bold text-slate-400">
                 <span>45 completed</span>
                 <span>138 total</span>
+              </div>
+            </div>
+            
+            <h2 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+              <BookOpen className="h-5 w-5 text-indigo-500" /> Electives Progress
+            </h2>
+            <div className="bg-white/60 backdrop-blur-xl rounded-3xl border border-white p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] mb-8">
+              <p className="text-sm font-bold text-slate-700 mb-2">AI Specialisation</p>
+              <div className="flex items-center gap-3">
+                 <div className="flex-1 bg-slate-100 rounded-full h-2">
+                    <div className="bg-indigo-500 h-2 rounded-full" style={{ width: '33%' }}></div>
+                 </div>
+                 <span className="text-xs font-bold text-slate-500">3 / 9 Cr</span>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl border border-amber-100 p-6 shadow-sm">
+              <div className="flex gap-4">
+                <div className="bg-white p-3 rounded-2xl shadow-sm text-amber-600 flex-shrink-0 self-start">
+                  <AlertTriangle className="h-6 w-6" strokeWidth={2.5} />
+                </div>
+                <div>
+                  <h4 className="text-base font-bold text-amber-900 mb-1">Unmapped Data</h4>
+                  <p className="text-sm font-medium text-amber-700/80 leading-relaxed">You have 2 imported courses that need manual mapping to count towards graduation.</p>
+                  <Link href="/unmapped" className="mt-4 inline-block text-xs font-bold text-amber-700 bg-white hover:bg-amber-50 px-4 py-2 rounded-xl transition-colors shadow-sm border border-amber-100">
+                    Review Now
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
