@@ -1,5 +1,5 @@
-// This approach is taken from https://next-auth.js.org/adapters/mongodb
 import { MongoClient, ServerApiVersion } from 'mongodb';
+import { attachDatabasePool } from '@vercel/functions';
 
 if (!process.env.MONGODB_URI) {
   throw new Error('Invalid/Missing environment variable: "MONGODB_URI"');
@@ -26,12 +26,14 @@ if (process.env.NODE_ENV === 'development') {
 
   if (!globalWithMongo._mongoClientPromise) {
     client = new MongoClient(uri, options);
+    attachDatabasePool(client);
     globalWithMongo._mongoClientPromise = client.connect();
   }
   clientPromise = globalWithMongo._mongoClientPromise;
 } else {
   // In production mode, it's best to not use a global variable.
   client = new MongoClient(uri, options);
+  attachDatabasePool(client);
   clientPromise = client.connect();
 }
 
